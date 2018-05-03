@@ -37,7 +37,7 @@ class APIController extends BaseController
         if (null === static::$instance) {
             static::$instance = new static();
         }
-        
+
         return static::$instance;
     }
 
@@ -99,7 +99,7 @@ class APIController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
-        
+
         //prepare query string for API call
         $_queryBuilder = $_queryBuilder.'/v1/webooks/messages';
 
@@ -108,7 +108,7 @@ class APIController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'messagesmedia-webhooks',
+            'user-agent'    => 'messagemedia-webhooks-php-sdk-1.0.0',
             'Accept'        => 'application/json',
             'Content-Type'    => $contentType
         );
@@ -161,7 +161,7 @@ class APIController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
-        
+
         //prepare query string for API call
         $_queryBuilder = $_queryBuilder.'/v1/webooks/messages/{webhookId}';
 
@@ -227,7 +227,7 @@ class APIController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
-        
+
         //prepare query string for API call
         $_queryBuilder = $_queryBuilder.'/v1/webooks/messages/';
 
@@ -310,7 +310,7 @@ class APIController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::$BASEURI;
-        
+
         //prepare query string for API call
         $_queryBuilder = $_queryBuilder.'/v1/webooks/messages/{webhookId}';
 
