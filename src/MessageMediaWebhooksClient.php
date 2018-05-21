@@ -2,7 +2,7 @@
 /*
  * MessageMediaWebhooks
  *
-
+ * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io ).
  */
 
 namespace MessageMediaWebhooksLib;
@@ -25,11 +25,11 @@ class MessageMediaWebhooksClient
         Configuration::$basicAuthPassword = $basicAuthPassword ? $basicAuthPassword : Configuration::$basicAuthPassword;
     }
     /**
-     * Singleton access to API controller
-     * @return Controllers\APIController The *Singleton* instance
+     * Singleton access to Webhooks controller
+     * @return Controllers\WebhooksController The *Singleton* instance
      */
-    public function getClient()
+    public function getWebhooks()
     {
-        return Controllers\APIController::getInstance();
+        return Controllers\WebhooksController::getInstance();
     }
 }

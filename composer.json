@@ -2,7 +2,7 @@
     "name": "messagemedia/webhooks",
     "type": "library",
     "description": "TODO: Add a description",
-    "version": "1.0.0",
+    "version": "1.4.0",
     "keywords": ["Webhooks","API","SDK"],
     "homepage": "https://apimatic.io",
     "license": "MIT",
