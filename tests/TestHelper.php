@@ -58,7 +58,7 @@ class TestHelper
         $allowExtra,
         $isOrdered
     ) {
-    
+
         if ($leftTree == null) {
             return true;
         }
@@ -123,7 +123,7 @@ class TestHelper
         }
         return true;
     }
-    
+
     /**
      * Recursively check whether the left JSON object is a proper subset of the right JSON object
      * @param   array   $leftObject     Left JSON object as string
@@ -140,7 +140,7 @@ class TestHelper
         $allowExtra,
         $isOrdered
     ) {
-    
+
         return static::isProperSubsetOf(
             APIHelper::deserialize($leftObject),
             APIHelper::deserialize($rightObject),
@@ -149,7 +149,7 @@ class TestHelper
             $isOrdered
         );
     }
-    
+
     /**
      * Check if left array of objects is a subset of right array
      * @param   array   $leftObject     Left array as a JSON string
@@ -166,11 +166,11 @@ class TestHelper
         $allowExtra,
         $isOrdered
     ) {
-    
+
         // Deserialize left and right objects from their respective strings
         $left = APIHelper::deserialize($leftObject);
         $right = APIHelper::deserialize($rightObject);
-        
+
         return static::isArrayOfJsonObjectsProperSubsetOf(
             $left,
             $right,
@@ -196,27 +196,27 @@ class TestHelper
         $allowExtra,
         $isOrdered
     ) {
-    
+
         // Return false if size different and checking was strict
         if (!$allowExtra && count($left) != count($right)) {
             return false;
         }
-        
+
         // Create list iterators
         $leftIter = (new \ArrayObject($left))->getIterator();
         $rightIter = (new \ArrayObject($right))->getIterator();
-        
+
         // Iterate left list and check if each value is present in the right list
         while ($leftIter->valid()) {
             $leftIter->next();
             $leftTree = $leftIter->current();
             $found = false;
-            
+
             // If order is not required, then search right array from beginning
             if (!$isOrdered) {
                 $rightIter->rewind();
             }
-            
+
             // Check each right element to see if left is a subset
             while ($rightIter->valid()) {
                 $rightIter->next();
@@ -231,15 +231,15 @@ class TestHelper
                     break;
                 }
             }
-            
+
             if (!$found) {
                 return false;
             }
         }
-        
+
         return true;
     }
-    
+
     /**
      * Check whether the a list is a subset of another list
      * @param   array   $leftList   Expected List
@@ -254,7 +254,7 @@ class TestHelper
         $allowExtra,
         $isOrdered
     ) {
-    
+
         if ($isOrdered && !$allowExtra) {
             return $leftList === $rightList;
         } elseif ($isOrdered && $allowExtra) {
@@ -267,7 +267,7 @@ class TestHelper
         }
         return true;
     }
-    
+
     /**
      * Recursively check whether the left headers map is a proper subset of
      * the right headers map. Header keys & values are compared case-insensitive.
@@ -282,7 +282,7 @@ class TestHelper
         array $rightTree,
         $checkValues
     ) {
-    
+
         // Http headers are case-insensitive
         $l = array_change_key_case($leftTree);
         $r = array_change_key_case($rightTree);
@@ -343,6 +343,12 @@ class TestHelper
     {
         $mapper = new JsonMapper();
         return $mapper;
+    }
+
+    public static function getAuthorizationFromEnvironment()
+    {
+        Configuration::$basicAuthUserName = getenv('MessageMediaApiTestsKey');
+        Configuration::$basicAuthPassword = getenv('MessageMediaApiTestsSecret');
     }
 
 }
