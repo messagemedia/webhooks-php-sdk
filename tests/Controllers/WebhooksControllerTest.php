@@ -29,8 +29,10 @@ class WebhooksControllerTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
+        TestHelper::getAuthorizationFromEnvironment();
         $client = new \MessageMediaWebhooksLib\MessageMediaWebhooksClient();
         self::$controller = $client->getWebhooks();
+
     }
 
     /**
