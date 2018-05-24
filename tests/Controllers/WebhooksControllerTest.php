@@ -41,5 +41,28 @@ class WebhooksControllerTest extends \PHPUnit_Framework_TestCase
         $this->httpResponse = new HttpCallBackCatcher();
     }
 
+    /**
+     * Retrieve Webhooks
+     */
+    public function retrieveWebhooks()
+    {
+        // Parameters for the API call
+        $page  =  0;
+        $pageSize  =  10;
 
+        // Set callback and perform API call
+        $result = null;
+        self::$controller->setHttpCallBack($this->httpResponse);
+        try {
+            $result = self::$controller->retrieveWebhook($page, $pageSize);
+        } catch (APIException $e) {
+        }
+
+        // Test response code
+        $this->assertEquals(
+            200,
+            $this->httpResponse->getResponse()->getStatusCode(),
+            "Status is not 200"
+        );
+    }
 }
