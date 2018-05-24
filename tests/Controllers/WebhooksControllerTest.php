@@ -44,7 +44,7 @@ class WebhooksControllerTest extends \PHPUnit_Framework_TestCase
     /**
      * Retrieve Webhooks
      */
-    public function retrieveWebhooks()
+    public function testRetrieveWebhooks1()
     {
         // Parameters for the API call
         $page  =  0;
