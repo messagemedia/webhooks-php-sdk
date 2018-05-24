@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "keywords": ["Webhooks","API","SDK"],
     "homepage": "https://developers.messagemedia.com",
-    "license": "Apache 2.0",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "MessageMedia Developers",
