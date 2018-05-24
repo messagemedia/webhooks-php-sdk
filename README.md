@@ -6,7 +6,7 @@ The MessageMedia Webhooks allows you to subscribe to one or several events and w
 ## ⭐️ Installing via Composer
 Run the Composer command to install the latest stable version of the Messages SDK:
 ```
-composer require messagemedia/messages-sdk
+composer require messagemedia/webhooks-sdk
 ```
 
 ## 🎬 Get Started
