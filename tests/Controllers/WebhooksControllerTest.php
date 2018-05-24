@@ -64,9 +64,9 @@ A successful request to the retrieve webhook endpoint will return a response bod
         // Parameters for the API call
         $webhookId = 'a7f11bb0-f299-4861-a5ca-9b29d04bc5ad';
         $body = TestHelper::getJsonMapper()->mapClass(json_decode(
-            "    {        \"url\": \"https://myurl.com\",        \"method\": \"POST\",        \"encoding\": \"FOR" .
+            '    {        \"url\": \"https://myurl.com\",        \"method\": \"POST\",        \"encoding\": \"FOR" .
             "M_ENCODED\",        \"events\": [            \"ENROUTE_DR\"        ],        \"template\": \"{\\\"id" .
-            "\\\":\\\"$mtId\\\", \\\"status\\\":\\\"$statusCode\\\"}\"    }"),
+            "\\\":\\\"$mtId\\\", \\\"status\\\":\\\"$statusCode\\\"}\"    }'),
             'MessageMediaWebhooksLib\\Models\\UpdateWebhookRequest'
         );
 
