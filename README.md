@@ -1,5 +1,6 @@
 # MessageMedia Webhooks PHP SDK
 [![Travis Build Status](https://api.travis-ci.org/messagemedia/webhooks-php-sdk.svg?branch=master)](https://travis-ci.org/messagemedia/webhooks-php-sdk)
+[![PHP version](https://badge.fury.io/ph/messagemedia%2Fwebhooks-sdk.svg)](https://badge.fury.io/ph/messagemedia%2Fwebhooks-sdk)
 
 The MessageMedia Webhooks allows you to subscribe to one or several events and when one of those events is triggered, an HTTP request is sent to the URL of your choice along with the message or payload. In simpler terms, it allows applications to "speak" to one another and get notified automatically when something new happens.
 
