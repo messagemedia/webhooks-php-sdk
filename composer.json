@@ -2,7 +2,6 @@
     "name": "messagemedia/webhooks-sdk",
     "type": "library",
     "description": "The MessageMedia Webhooks allows you to subscribe to one or several events and when one of those events is triggered, an HTTP request is sent to the URL of your choice along with the message or payload. In simpler terms, it allows applications to 'speak' to one another and get notified automatically when something new happens.",
-    "version": "1.0.0",
     "keywords": ["Webhooks","API","SDK"],
     "homepage": "https://developers.messagemedia.com",
     "license": "Apache-2.0",
